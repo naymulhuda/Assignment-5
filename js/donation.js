@@ -1,4 +1,5 @@
 
+// const mainBalance = parseFloat(document.getElementById('donation-decrease').innerText);
 // Noakhali donate btn
 const donateBtnOne = document.getElementById('donate-btn').addEventListener('click', function(){
    const noakhaliDonationInput = parseFloat(document.getElementById('donation-input-noakhali').value);
@@ -13,7 +14,7 @@ const donateBtnOne = document.getElementById('donate-btn').addEventListener('cli
     const newDonation = balance + noakhaliDonationInput;
 
     document.getElementById('donation-increase').innerText = newDonation;
-
+    //  step 6
     const mainBalance = parseFloat(document.getElementById('donation-decrease').innerText);
 
     const newMainBalance = mainBalance - noakhaliDonationInput;
@@ -24,35 +25,58 @@ const donateBtnOne = document.getElementById('donate-btn').addEventListener('cli
     div.classList.add('h-32', 'w-9/12', 'border-2', 'border-gray-400', 'flex', 'flex-col', 'justify-center', 'p-5', 'rounded-lg')
     div.innerHTML = `
 
-    <h4 class= "text-xl font-bold mb-4">${newDonation} Taka is donated for flood at Noakhali </h4>
+    <h4 class= "text-xl font-bold mb-4">${noakhaliDonationInput} Taka is donated for flood at Noakhali </h4>
     <p class= "text-gray-600"> ${new Date().toLocaleDateString()} </p>
     `
     document.getElementById('transaction-history').appendChild(div);
 
-
-    // p.innerText = `Added : ${newDonation} Taka is donated for flood at Noakhali`;
-    // console.log(p);
-
-    // document.getElementById('transaction-history').appendChild(p);
    }
    else {
      alert('Invalid Number');
    }
-  //  // clear before history function 
-  //  // noakhali
-  //  const historyItem = document.createElement('div');
-  //  historyItem.className = 'bg-white border-2 border-gray-600 p-4 rounded-md';
-
-  //  historyItem.innerHTML = `
-   
-  //     <p class= "text-xs text-gray-500">${new Date().toLocaleDateString()}</p>
-  //     <p class= "text-xs text-gray-500"> Donate: $${newDonation.toFixed(2)}</p>
-  //  `;
-  //  const historyContainer = document.getElementById('transaction-history');
-
-  //  historyContainer.insertBefore(historyItem, historyContainer.firstChild);
-   
 })
+// Donation button end
+
+
+
+
+
+
+// feni donate btn
+// step-1
+const donateBtnFeni = document.getElementById('donate-btn-feni').addEventListener('click', function(){
+  console.log('feni activated');
+  // step-2
+  const feniDonationInput = parseFloat(document.getElementById('feni-donation-input').value);
+  console.log(feniDonationInput);
+
+  //step-3 if and else
+  if(feniDonationInput >= 0){
+
+    //step-4
+    const feniBalance = parseFloat(document.getElementById('feni-donation-increase').innerText);
+    console.log(feniBalance);
+
+    //step - 5
+    const newFeniDonation = feniBalance + feniDonationInput;
+
+    document.getElementById('feni-donation-increase').innerText = newFeniDonation;
+
+    //step - 6
+    const mainBalance = parseFloat(document.getElementById('donation-decrease').innerText);
+
+    //step 7
+    const newMainBalance = mainBalance - feniDonationInput;
+    document.getElementById('donation-decrease').innerText = newMainBalance;
+
+  }
+  else {
+    console.log('Invalid Input');
+  }
+})
+
+// Donation button end
+
 
 
 // History tab functionality
