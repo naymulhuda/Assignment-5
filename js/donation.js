@@ -28,12 +28,6 @@ const donateBtnOne = document.getElementById('donate-btn-noakhali').addEventList
 
 // History tab functionality
 
-// const historyTab = document.getElementById('history-btn');
-// historyTab.addEventListener('click', function () {
-
-//   historyTab.classList.add('bg-lime-300');
-// });
-
 const historyTab = document.getElementById('history-btn');
 const donationTab = document.getElementById('donation-btn');
 
@@ -41,5 +35,13 @@ historyTab.addEventListener('click', function () {
   historyTab.classList.add('bg-[#bef264]' );
 
   donationTab.classList.remove('bg-lime-300');
+  donationTab.classList.add('text-gray-500');
+
 });
 
+donationTab.addEventListener('click', function(){
+  donationTab.classList.add('bg-lime-300');
+
+  historyTab.classList.remove('bg-[#bef264]')
+  historyTab.classList.add('text-gray-500');
+})
