@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    
+        <div class="navbar bg-red-300 lg:w- lg:mx-auto fixed top-0 left-0 right-0 border-2 border-neutral-800">
+            <div class="navbar-start">
+              <div class="dropdown">
+                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-5 w-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M4 6h16M4 12h8m-8 6h16" />
+                  </svg>
+                </div>
+                <ul
+                  tabindex="0"
+                  class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                </ul>
+              </div>
+              <a href="/index.html" class="btn btn-ghost text-xl bg-lime-300 font-bold px-8 w-28">Home</a>
+            </div>
+            <div class="navbar-center lg:flex">
+              <div class="flex items-center gap-4">
+                <img class="w-12 h-12" src="assets/logo.png" alt="" srcset="">
+                <p class="text-xl font-bold">Donate Bangladesh</p>
+              </div>
+            </div>
+            <div class="navbar-end gap-3">
+              <img class="w-9 h-9" src="assets/coin.png" alt="" srcset="">
+              <p class="text-xl font-medium"><span id="donation-decrease">5500</span> BDT</p>
+            </div>
+          </div>
+   
+    <main>
+       <section class="text-center">
+         <h1 class="text-4xl font-extrabold mt-24">Important FAQ</h1>
+          
+         <div class=" flex flex-col items-center gap-5 text-left">
+            <!-- Question 1 -->
+        <div class="collapse collapse-arrow bg-base-200 mt-16  w-9/12">
+           
+            <input type="radio" name="my-accordion-2" checked="checked" />
+            <div class="collapse-title text-xl font-medium">What is DOM ?</div>
+            <div class="collapse-content">
+              <p>The Document Object Model. This means that we are developing a model in which the document or Web page contains objects (elements, links, etc.) that can be manipulated. So you will be able to delete, add, or change an element (as long as the document is still valid, of course!), change its content or add, delete or change an attribute. </p>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="collapse collapse-arrow bg-base-200 w-9/12">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">How do I use the DOM in an HTML page?</div>
+            <div class="collapse-content">
+              <p>There will be two ways of using the HTML module of the DOM. You might write JavaScript or VBScript in your page. Or, you might use an external application such as a plug-in, ActiveX control, or Java applet, that accesses the document through your browser (support depends on the browser).</p>
+            </div>
+          </div>
+          <!-- Question 3 -->
+          <div class="collapse collapse-arrow bg-base-200 w-9/12">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">
+                What programming languages can I use with the DOM?</div>
+            <div class="collapse-content">
+              <p>The DOM is designed to be used with any programming language. In order to provide a precise, language-independent specification of the DOM interfaces, we have chosen to define the specifications in OMG IDL, as defined in the CORBA 2.2 specification.</p>
+            </div>
+          </div>
+          <!-- Question 4 -->
+          <div class="collapse collapse-arrow bg-base-200 w-9/12">
+            <input type="radio" name="my-accordion-2" />
+            <div class="collapse-title text-xl font-medium">
+                How to add an event listener to a DOM element?</div>
+            <div class="collapse-content">
+              <p>You can use the addEventListener method to add an event listener to a DOM element. The method takes two parameters: the event type and the event handler function.</p>
+            </div>
+          </div>
+         </div>
+       </section>
+    </main>
+</body>
+</html>

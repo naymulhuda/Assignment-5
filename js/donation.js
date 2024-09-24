@@ -1,5 +1,4 @@
-
-// const mainBalance = parseFloat(document.getElementById('donation-decrease').innerText);
+const div = document.createElement('div');
 // Noakhali donate btn
 const donateBtnOne = document.getElementById('donate-btn').addEventListener('click', function(){
    const noakhaliDonationInput = parseFloat(document.getElementById('donation-input-noakhali').value);
@@ -16,11 +15,11 @@ const donateBtnOne = document.getElementById('donate-btn').addEventListener('cli
     document.getElementById('donation-increase').innerText = newDonation;
     //  step 6
     const mainBalance = parseFloat(document.getElementById('donation-decrease').innerText);
-
+    //step 7
     const newMainBalance = mainBalance - noakhaliDonationInput;
     document.getElementById('donation-decrease').innerText = newMainBalance;
     
-    //History
+    //History - step - 8
     const div = document.createElement('div');
     div.classList.add('h-32', 'w-9/12', 'border-2', 'border-gray-400', 'flex', 'flex-col', 'justify-center', 'p-5', 'rounded-lg')
     div.innerHTML = `
@@ -36,11 +35,6 @@ const donateBtnOne = document.getElementById('donate-btn').addEventListener('cli
    }
 })
 // Donation button end
-
-
-
-
-
 
 // feni donate btn
 // step-1
@@ -69,13 +63,69 @@ const donateBtnFeni = document.getElementById('donate-btn-feni').addEventListene
     const newMainBalance = mainBalance - feniDonationInput;
     document.getElementById('donation-decrease').innerText = newMainBalance;
 
+    //History - step - 8
+    const div = document.createElement('div');
+    div.classList.add('h-32', 'w-9/12', 'border-2', 'border-gray-400', 'flex', 'flex-col', 'justify-center', 'p-5', 'rounded-lg')
+    div.innerHTML = `
+
+    <h4 class= "text-xl font-bold mb-4">${feniDonationInput} Taka is donated for Flood Relief in Feni,Bangladesh </h4>
+    <p class= "text-gray-600"> ${new Date().toLocaleDateString()} </p>
+    `
+    document.getElementById('history-feni').appendChild(div);
+
   }
   else {
     console.log('Invalid Input');
   }
-})
+});
 
 // Donation button end
+
+
+/* Quota Donate Button */
+// step-1
+const donateBtnQuota = document.getElementById('donate-btn-quota').addEventListener('click', function(){
+  console.log('quota activated');
+
+  // step-2
+  const quotaDonationInput = parseFloat(document.getElementById('quota-donation-input').value);
+  console.log(quotaDonationInput);
+
+  //step-3 if and else
+  if(quotaDonationInput >= 0 && !isNaN(quotaDonationInput) ){
+
+    //step-4
+    const quotaBalance = parseFloat(document.getElementById('quota-donation-increase').innerText);
+    console.log(quotaBalance);
+
+    //step - 5
+    const newQuotaDonation = quotaBalance + quotaDonationInput;
+
+    document.getElementById('quota-donation-increase').innerText = newQuotaDonation;
+    
+    //step - 6
+    const mainBalance = parseFloat(document.getElementById('donation-decrease').innerText);
+
+    //step 7
+    const newMainBalance = mainBalance - quotaDonationInput;
+    document.getElementById('donation-decrease').innerText = newMainBalance;
+
+    //History - step - 8
+    const div = document.createElement('div');
+    div.classList.add('h-32', 'w-9/12', 'border-2', 'border-gray-400', 'flex', 'flex-col', 'justify-center', 'p-5', 'rounded-lg')
+    div.innerHTML = `
+
+    <h4 class= "text-xl font-bold mb-4">${quotaDonationInput} Taka is Aid for Injured in the Quota Movement </h4>
+    <p class= "text-gray-600"> ${new Date().toLocaleDateString()} </p>
+    `
+    document.getElementById('quota-history').appendChild(div);
+  }
+  else {
+    console.log('Invalid Input');
+  }
+});
+
+/* Button end */
 
 
 
@@ -95,19 +145,23 @@ historyTab.addEventListener('click', function () {
   document.getElementById('donation-section').classList.add('hidden');
 
    // add transaction section
-   document.getElementById('transaction-history').classList.remove('hidden');
+  //  document.getElementById('transaction-history').classList.remove('hidden');
+   document.getElementById('trans-history').classList.remove('hidden');
+   
+
   
 });
+
+//donation tab functionality
 
 donationTab.addEventListener('click', function(){
   donationTab.classList.add('bg-lime-300');
 
-  historyTab.classList.remove('bg-[#bef264]')
+  historyTab.classList.remove('bg-[#bef264]');
   historyTab.classList.add('text-gray-500');
 
   document.getElementById('donation-section').classList.remove('hidden');
   
-  // remove transaction section
-  document.getElementById('transaction-history').classList.add('hidden');
+  document.getElementById('trans-history').classList.add('hidden');
   
-})
+});
