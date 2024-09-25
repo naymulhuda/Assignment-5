@@ -14,12 +14,12 @@ const donateBtnOne = document.getElementById('donate-btn').addEventListener('cli
 
     const newDonation = balance + noakhaliDonationInput;
 
-    document.getElementById('donation-increase').innerText = newDonation;
+    document.getElementById('donation-increase').innerText = newDonation.toFixed(2);
     //  step 6
     
     //step 7
     const newMainBalance = mainBalance - noakhaliDonationInput;
-    document.getElementById('donation-decrease').innerText = newMainBalance;
+    document.getElementById('donation-decrease').innerText = newMainBalance.toFixed(2);
     
     //History - step - 8
     const div = document.createElement('div');
@@ -53,12 +53,12 @@ const donateBtnFeni = document.getElementById('donate-btn-feni').addEventListene
 
    const newDonationFeni = balance + feniDonationInput;
 
-   document.getElementById('feni-donation-increase').innerText = newDonationFeni;
+   document.getElementById('feni-donation-increase').innerText = newDonationFeni.toFixed(2);
    //  step 6
    
    //step 7
    const newMainBalance = mainBalance - feniDonationInput;
-   document.getElementById('donation-decrease').innerText = newMainBalance;
+   document.getElementById('donation-decrease').innerText = newMainBalance.toFixed(2);
 
     //History - step - 8
     const div = document.createElement('div');
@@ -92,7 +92,7 @@ const donateBtnQuota = document.getElementById('donate-btn-quota').addEventListe
 
   //step-3 if and else
   if(quotaDonationInput >= 0 && !isNaN(quotaDonationInput) && quotaDonationInput <= mainBalance){
-
+    
     //step-4
     const quotaBalance = parseFloat(document.getElementById('quota-donation-increase').innerText);
     console.log(quotaBalance);
@@ -100,14 +100,12 @@ const donateBtnQuota = document.getElementById('donate-btn-quota').addEventListe
     //step - 5
     const newQuotaDonation = quotaBalance + quotaDonationInput;
 
-    document.getElementById('quota-donation-increase').innerText = newQuotaDonation;
+    document.getElementById('quota-donation-increase').innerText = newQuotaDonation.toFixed(2);
     
-    //step - 6
-  
 
     //step 7
     const newMainBalance = mainBalance - quotaDonationInput;
-    document.getElementById('donation-decrease').innerText = newMainBalance;
+    document.getElementById('donation-decrease').innerText = newMainBalance.toFixed(2);
 
     //History - step - 8
     const div = document.createElement('div');
