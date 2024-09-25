@@ -34,6 +34,7 @@ const donateBtnOne = document.getElementById('donate-btn').addEventListener('cli
    }
    else {
      alert('Invalid Number');
+     return;
    }
    my_modal_1.showModal();
 })
@@ -72,6 +73,7 @@ const donateBtnFeni = document.getElementById('donate-btn-feni').addEventListene
   }
   else {
     console.log('Invalid Input');
+    return;
   }
   my_modal_2.showModal();
 });
