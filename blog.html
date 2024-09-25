@@ -8,43 +8,38 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    
-        <div class="navbar bg-red-300 lg:w- lg:mx-auto fixed top-0 left-0 right-0 border-2 border-neutral-800">
-            <div class="navbar-start">
-              <div class="dropdown">
-                <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="h-5 w-5"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M4 6h16M4 12h8m-8 6h16" />
-                  </svg>
-                </div>
-                <ul
-                  tabindex="0"
-                  class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                </ul>
-              </div>
-              <a href="/index.html" class="btn btn-ghost text-xl bg-lime-300 font-bold px-8 w-28">Home</a>
-            </div>
-            <div class="navbar-center lg:flex">
-              <div class="flex items-center gap-4">
-                <img class="w-12 h-12" src="assets/logo.png" alt="" srcset="">
-                <p class="text-xl font-bold">Donate Bangladesh</p>
-              </div>
-            </div>
-            <div class="navbar-end gap-3">
-              <img class="w-9 h-9" src="assets/coin.png" alt="" srcset="">
-              <p class="text-xl font-medium"><span id="donation-decrease">5500</span> BDT</p>
-            </div>
-          </div>
-   
+  <header class="bg sticky  top-0 left-0 right-0">
+    <div class="navbar bg-[#84cc1640] lg:w- lg:mx-auto">
+      <div class="navbar-start">
+        <a href="/index.html" class="btn  btn-ghost text-lg lg:text-xl bg-lime-300 font-bold px-8 w-20 lg:w-28">Home
+          
+        </a>
+      </div>
+      <div class="navbar-center lg:flex">
+        <div class="flex items-center gap-4">
+          <img class="w-12 h-12" src="assets/logo.png" alt="" srcset="">
+          <p class="text-xl font-bold hidden lg:flex">Donate Bangladesh</p>
+        </div>
+      </div>
+      <div class="navbar-end gap-1 lg:gap-3">
+        <img class="w-9 h-9" src="assets/coin.png" alt="" srcset="">
+        <p class="text-xl font-medium"><span id="donation-decrease">5500</span> BDT</p>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+
+      <section class="bg-[#ecfccb40]  flex justify-center gap-5 ">
+          <button id="donation-btn" class="btn w-28 mt-8 lg:w-40 bg-lime-300 text-black">Donation
+          </button>
+
+          <!-- history button -->
+          
+          <button id="history-btn" class="btn w-28 mt-8 lg:mb-5 lg:w-40 bg-white text-black">History
+          </button>
+      </section>
+
+  </header>
     <main>
        <section class="text-center">
          <h1 class="text-4xl font-extrabold mt-24">Important FAQ</h1>

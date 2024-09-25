@@ -1,10 +1,12 @@
 const div = document.createElement('div');
+const mainBalance = parseFloat(document.getElementById('donation-decrease').innerText);
 // Noakhali donate btn
+// step 1
 const donateBtnOne = document.getElementById('donate-btn').addEventListener('click', function(){
    const noakhaliDonationInput = parseFloat(document.getElementById('donation-input-noakhali').value);
    console.log(noakhaliDonationInput);
 
-   if(noakhaliDonationInput >= 0){
+   if(noakhaliDonationInput >= 0 && !isNaN(noakhaliDonationInput) && noakhaliDonationInput <= mainBalance){
 
     const balance = parseFloat(document.getElementById('donation-increase').innerText);
 
@@ -14,18 +16,18 @@ const donateBtnOne = document.getElementById('donate-btn').addEventListener('cli
 
     document.getElementById('donation-increase').innerText = newDonation;
     //  step 6
-    const mainBalance = parseFloat(document.getElementById('donation-decrease').innerText);
+    
     //step 7
     const newMainBalance = mainBalance - noakhaliDonationInput;
     document.getElementById('donation-decrease').innerText = newMainBalance;
     
     //History - step - 8
     const div = document.createElement('div');
-    div.classList.add('h-32', 'w-9/12', 'border-2', 'border-gray-400', 'flex', 'flex-col', 'justify-center', 'p-5', 'rounded-lg')
+    div.classList.add( 'w-full', 'border-2', 'border-gray-400', 'flex', 'flex-col', 'justify-center', 'p-5', 'rounded-lg', 'mt-20')
     div.innerHTML = `
 
-    <h4 class= "text-xl font-bold mb-4">${noakhaliDonationInput} Taka is donated for flood at Noakhali </h4>
-    <p class= "text-gray-600"> ${new Date().toLocaleDateString()} </p>
+    <h4 class= "text-xl font-bold mb-3">${noakhaliDonationInput} Taka is donated for flood at Noakhali </h4>
+    <p class= "text-gray-600"> ${Date()} </p>
     `
     document.getElementById('transaction-history').appendChild(div);
 
@@ -33,43 +35,37 @@ const donateBtnOne = document.getElementById('donate-btn').addEventListener('cli
    else {
      alert('Invalid Number');
    }
+   my_modal_1.showModal();
 })
 // Donation button end
 
 // feni donate btn
-// step-1
 const donateBtnFeni = document.getElementById('donate-btn-feni').addEventListener('click', function(){
-  console.log('feni activated');
-  // step-2
   const feniDonationInput = parseFloat(document.getElementById('feni-donation-input').value);
   console.log(feniDonationInput);
 
-  //step-3 if and else
-  if(feniDonationInput >= 0){
+  if(feniDonationInput >= 0 && !isNaN(feniDonationInput) && feniDonationInput <= mainBalance){
 
-    //step-4
-    const feniBalance = parseFloat(document.getElementById('feni-donation-increase').innerText);
-    console.log(feniBalance);
+   const balance = parseFloat(document.getElementById('feni-donation-increase').innerText);
 
-    //step - 5
-    const newFeniDonation = feniBalance + feniDonationInput;
+   console.log(balance);
 
-    document.getElementById('feni-donation-increase').innerText = newFeniDonation;
+   const newDonationFeni = balance + feniDonationInput;
 
-    //step - 6
-    const mainBalance = parseFloat(document.getElementById('donation-decrease').innerText);
-
-    //step 7
-    const newMainBalance = mainBalance - feniDonationInput;
-    document.getElementById('donation-decrease').innerText = newMainBalance;
+   document.getElementById('feni-donation-increase').innerText = newDonationFeni;
+   //  step 6
+   
+   //step 7
+   const newMainBalance = mainBalance - feniDonationInput;
+   document.getElementById('donation-decrease').innerText = newMainBalance;
 
     //History - step - 8
     const div = document.createElement('div');
-    div.classList.add('h-32', 'w-9/12', 'border-2', 'border-gray-400', 'flex', 'flex-col', 'justify-center', 'p-5', 'rounded-lg')
+    div.classList.add('w-full', 'border-2', 'border-gray-400', 'flex', 'flex-col', 'justify-center', 'p-5', 'rounded-lg')
     div.innerHTML = `
 
-    <h4 class= "text-xl font-bold mb-4">${feniDonationInput} Taka is donated for Flood Relief in Feni,Bangladesh </h4>
-    <p class= "text-gray-600"> ${new Date().toLocaleDateString()} </p>
+    <h4 class= "text-xl font-bold mb-3">${feniDonationInput} Taka is donated for Flood Relief in Feni,Bangladesh </h4>
+    <p class= "text-gray-600"> ${Date()}  </p>
     `
     document.getElementById('history-feni').appendChild(div);
 
@@ -77,6 +73,7 @@ const donateBtnFeni = document.getElementById('donate-btn-feni').addEventListene
   else {
     console.log('Invalid Input');
   }
+  my_modal_2.showModal();
 });
 
 // Donation button end
@@ -92,7 +89,7 @@ const donateBtnQuota = document.getElementById('donate-btn-quota').addEventListe
   console.log(quotaDonationInput);
 
   //step-3 if and else
-  if(quotaDonationInput >= 0 && !isNaN(quotaDonationInput) ){
+  if(quotaDonationInput >= 0 && !isNaN(quotaDonationInput) && quotaDonationInput <= mainBalance){
 
     //step-4
     const quotaBalance = parseFloat(document.getElementById('quota-donation-increase').innerText);
@@ -104,7 +101,7 @@ const donateBtnQuota = document.getElementById('donate-btn-quota').addEventListe
     document.getElementById('quota-donation-increase').innerText = newQuotaDonation;
     
     //step - 6
-    const mainBalance = parseFloat(document.getElementById('donation-decrease').innerText);
+  
 
     //step 7
     const newMainBalance = mainBalance - quotaDonationInput;
@@ -112,17 +109,18 @@ const donateBtnQuota = document.getElementById('donate-btn-quota').addEventListe
 
     //History - step - 8
     const div = document.createElement('div');
-    div.classList.add('h-32', 'w-9/12', 'border-2', 'border-gray-400', 'flex', 'flex-col', 'justify-center', 'p-5', 'rounded-lg')
+    div.classList.add( 'w-full', 'border-2', 'border-gray-400', 'flex', 'flex-col', 'justify-center', 'p-5', 'rounded-lg')
     div.innerHTML = `
 
-    <h4 class= "text-xl font-bold mb-4">${quotaDonationInput} Taka is Aid for Injured in the Quota Movement </h4>
-    <p class= "text-gray-600"> ${new Date().toLocaleDateString()} </p>
+    <h4 class= "text-xl font-bold mb-3">${quotaDonationInput} Taka is Aid for Injured in the Quota Movement </h4>
+    <p class= "text-gray-600"> ${Date()} </p>
     `
     document.getElementById('quota-history').appendChild(div);
   }
   else {
     console.log('Invalid Input');
   }
+  my_modal_3.showModal();
 });
 
 /* Button end */
@@ -147,8 +145,8 @@ historyTab.addEventListener('click', function () {
    // add transaction section
   //  document.getElementById('transaction-history').classList.remove('hidden');
    document.getElementById('trans-history').classList.remove('hidden');
-   
-
+  
+  
   
 });
 
@@ -163,5 +161,8 @@ donationTab.addEventListener('click', function(){
   document.getElementById('donation-section').classList.remove('hidden');
   
   document.getElementById('trans-history').classList.add('hidden');
+
+  //remove modal
+
   
 });
